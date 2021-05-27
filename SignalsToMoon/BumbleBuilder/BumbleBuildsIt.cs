@@ -69,8 +69,8 @@ namespace BumbleBuilder
                 }
             }catch(Exception e)
             {
-                Console.WriteLine(e);
-                context.Logger.LogLine(e.StackTrace);            
+                context.Logger.Log($"Error: {e.Message}");
+                context.Logger.Log(e.StackTrace);            
             }
         }
         private async Task ProcessRecordAsync(SNSEvent.SNSRecord record, ILambdaContext context)
